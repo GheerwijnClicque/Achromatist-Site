@@ -1,0 +1,383 @@
+nav {
+    position: relative;
+}
+
+.page {
+     display: inline-block;
+    width: 100%;
+    background: none;
+}
+
+.top {
+    padding: 2rem 4rem 2rem 4rem;
+}
+
+.content {
+    padding: 0;
+
+}
+
+.grid-container {
+   /* width: 85%; */
+    margin: 0 auto;
+     -moz-column-width: 13em;
+ -webkit-column-width: 13em;
+ -moz-column-gap: 1em;
+ -webkit-column-gap: 1em; 
+}
+
+.grid-element {
+    width: 100%; /* 15% */
+    padding-bottom: 0px;
+    margin: 1.5%;
+     display: inline-block; 
+    margin-bottom: 10px;
+}
+
+.grid-element .fa {
+    font-size: 5rem;
+    padding: 10%;
+}
+
+@media(max-width:544px){
+   .grid-element .fa {
+        font-size: 2rem;
+        padding: 10%;
+    }
+}
+
+.grid-element span {
+    color: white;
+}
+
+.grid-element-content {
+    position: absolute;
+    height: 80%;
+    width: 90%;
+    padding: 10% 5%;
+}
+
+.grid-element-content img {
+    width: auto;
+    height: auto;
+    max-height:90%;
+    max-width:100%;
+}
+
+.sub-content-item {
+    text-align: center;
+    width: 100%;
+    background-color: white;
+}
+
+.slash {
+    border-top: 4px solid black;
+    width: 2em;
+    margin-right: 1.5em;
+    transform: rotate(-55deg);
+    float: left;
+}
+
+.turn {
+    transform: rotate(0deg);
+}
+
+
+.left-arrow {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  border-top: 4px solid #333;
+  border-right: 4px solid #333;
+  -moz-transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  margin-right: 1.5em;
+  float: left;
+}
+
+
+#slash line {
+    stroke-dasharray: 62px;
+    stroke-dashoffset: 62px;
+}
+
+#slash.checked line {
+    stroke-dashoffset: 0px;
+    transition: stroke-dashoffset 0.4s ease 0.2s;
+
+   /* transition: stroke-dashoffset 0.8s ease 0.2s, fill 0.2s ease;*/
+}
+
+app-photography {
+    position: initial !important;
+}
+
+
+
+section {
+ display: inline-block;
+ background: none;
+}
+
+.category {
+    cursor: pointer; 
+}
+
+.category img {
+    opacity: 1;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}
+
+.category img:hover {
+   opacity: 0.6;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}
+
+
+
+
+
+
+
+#btn-expand-gallery {
+    border: 2px solid black;
+    width: 15px;
+    height: 25px;
+    margin-top: 15px;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+#btn-full-gallery {
+    margin-top: 14px;
+    margin-right: 5px;
+    cursor: pointer;
+    width: 22px;
+}
+
+#btn-full-gallery rect {
+    stroke: gray;
+}
+
+#btn-full-gallery.active rect {
+    stroke: black;
+}
+
+#btn-full-gallery:hover rect {
+    stroke: black;
+}
+
+
+
+#btn-detail-gallery {
+    margin-top: 14px;
+    margin-right: 20px;
+    width: 21px;
+    cursor: pointer;
+}
+
+#btn-detail-gallery rect {
+    stroke: gray;
+}
+
+#btn-detail-gallery.active rect {
+    stroke: black;
+}
+
+#btn-detail-gallery:hover rect {
+    stroke: black;
+}
+
+
+
+
+/* CUSTOM LIGHTBOX CSS */
+.lb-nav a.lb-next {
+    position: fixed !important;
+}
+
+
+
+/* GALLERY VIEW */
+.overlay-gallery {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */    
+    height: 0%;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 100px;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(255,255,255, 1); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: hidden;
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-gallery-content {
+    height: 100%;
+    text-align: center; /* Centered text/links */
+   /* margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */ 
+
+}
+
+.overlay-gallery-image img {
+    max-width: 100%;
+    max-height: 65vh;
+}
+
+/* The navigation links inside the overlay */
+.overlay-gallery a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay-gallery a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay-gallery .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .overlay-gallery a {font-size: 20px}
+    .overlay-gallery .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+
+[hidden] {
+    display: none;
+}
+
+.controls {
+    height: 50px;
+}
+
+.controls span {
+    cursor: pointer;
+}
+
+swiper{
+    height: 300px;
+    width: 400px;
+}
+
+/*
+.swiper-wrapper {
+    max-width: 80%;
+    max-height: 75vh;
+    z-index: 0;
+}
+
+ .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+    */
+
+
+    .outer {
+    display: table;
+    position: absolute;
+    height: 80%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto; 
+    width: 60%;
+}
+
+.nav-gallery-controls {
+    float: left;
+}
+
+/* 2nd Test of centering */
+/*
+.overlay-gallery-image img {
+    max-width: 70%;
+    margin-left: 20%;
+    float: left;
+}
+
+.info {
+
+    text-align: left;
+    width: 10%;
+    float: left;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+
+.info p {
+    font-size: 12px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+*/
+.info {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.counter {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+     font-size: 12px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    margin: 10px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+.info p {
+    font-size: 12px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    margin: 10px;
+    margin-top: 0px;
+    display: inline-block;
+}

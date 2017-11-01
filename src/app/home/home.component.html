@@ -1,0 +1,90 @@
+<nav class="topnav" style="display: block;">
+  <div>
+    <!-- <a href="#"><img id="logo" src="../assets/logo.png"/></a> -->
+  </div>
+  <ul>
+    <!--  <li [ngClass]="[menuToggleState]" class="menu-item">
+        <a href="">home</a>
+      </li> -->
+      <li [ngClass]="[menuToggleState]" class="menu-item">
+        <a href="/photography">photography</a>
+      </li>
+      <li [ngClass]="[menuToggleState]" class="menu-item">
+          <a href="">design</a>
+      </li>
+      <li [ngClass]="[menuToggleState]" class="menu-item">
+          <a href="">projects</a>
+      </li>
+
+    <li style="padding-top: 10px;">
+        <div id="nav-icon3" [ngClass]="[menuToggleState]" (click)="toggleNav($event)" style="float: right;">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+    </li>
+  </ul>
+</nav>
+
+
+<section class="main">
+  <!-- 
+  <div class="img-preview-buttons">
+    <a class="prev" (click)="previousImage()">&#10094;</a>
+    <a class="next" (click)="nextImage()">&#10095;</a>
+  </div>
+  -->
+    <div id="hover-trigger"></div>
+    <div class="overlay"></div>
+    <div class="menu">
+      <p>photography</p>
+      <p>design</p>
+      <p>projects</p>
+    </div>
+   
+<swiper class="swiper" [config]="config">
+    <div class="swiper-wrapper images">
+        <img class="swiper-slide" *ngFor="let image of images" [src]="image.src">
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</swiper>
+   <!--    <div class="images" >
+   <span><img class="img-preview" [ngClass]="[imageState]" src="{{images[imageIndex].src}}" /></span>
+    </div>  -->
+
+ <!-- <img style="    width: 100%;
+    height: 100%;" src="{{image.src}}"/> -->
+
+ <!-- <a href="#content" >
+    <svg class="arrows">
+        <path class="a3" d="M9 60 L30 72 L51 60"></path>
+    </svg> 
+  </a> -->
+</section>
+
+
+
+
+<!--
+<section class="content" style="display: block" id="content">
+  <div id="categories">
+      <div class="category">
+        <a href="">
+          <p id="clip">/PHOTOGRAPHY</p>
+        </a>
+      </div>
+     <div class="category">
+        <a href="">
+          <p id="clip">/DESIGN</p>
+        </a>
+    </div>
+     <div class="category">
+        <a href="">
+          <p id="clip">/PROJECTS</p>
+        </a>
+    </div>
+    
+  </div>
+-->
