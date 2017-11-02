@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-photography',
@@ -21,7 +21,7 @@ export class PhotographyComponent implements OnInit {
   public menuActive: boolean = false;
   public menuToggleState: string = '';
   public galleryActive: boolean = false;
-//public image: object = {src: 'assets/gallery/2.jpg'};
+  //public image: object = {src: 'assets/gallery/2.jpg'};
   public image;
   public imageIndex: number = 0;
 
@@ -90,4 +90,14 @@ export class PhotographyComponent implements OnInit {
     this.image = this.images[this.imageIndex];
   }
 
+  @HostListener('document:keyup', ['$event'])
+  public keydown($event: KeyboardEvent): void {
+    if (this.galleryActive) {
+      if ($event.key === 'ArrowLeft' || $event.key === 'ArrowUp') {
+        this.previousImage();
+      } else if ($event.key === 'ArrowDown' || $event.key === 'ArrowRight') {
+        this.nextImage();
+      }
+    }
+  }
 }
