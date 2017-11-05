@@ -2,8 +2,26 @@ nav {
     position: relative;
 }
 
+.menu-info {
+    float: left;
+
+}
+
+.menu-info p {
+    padding: 20px 16px;
+    padding-left: 0px;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.menu-info p:hover {
+    text-decoration: underline;
+}
+
+
 .page {
-     display: inline-block;
+    display: inline-block;
     width: 100%;
     background: none;
 }
@@ -226,6 +244,14 @@ section {
 
 }
 
+.overlay-gallery-image {
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+
 .overlay-gallery-image img {
     max-width: 100%;
     max-height: 65vh;
@@ -269,8 +295,22 @@ section {
     display: none;
 }
 
-.controls {
-    height: 50px;
+
+
+.controls .navigation {
+    position: absolute;
+    width: 20%;
+    top: 50%;
+}
+
+.controls .navigation:nth-child(1) {
+
+    left: 0;
+}
+
+.controls .navigation:nth-child(2) {
+
+    right: 0;
 }
 
 .controls span {
@@ -329,7 +369,7 @@ swiper{
     width: 60%;
 }
 
-.nav-gallery-controls {
+/*.nav-gallery-controls {
     float: left;
 }
 
@@ -359,14 +399,14 @@ swiper{
 .info {
     position: fixed;
     bottom: 0;
-    left: 0;
+    left: 30px;
 }
 
 .counter {
     position: fixed;
     bottom: 0;
-    right: 0;
-     font-size: 12px;
+    right: 30px;
+    font-size: 12px;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
     margin: 10px;

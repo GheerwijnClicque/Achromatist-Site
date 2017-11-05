@@ -20,7 +20,7 @@ export class PhotographyComponent implements OnInit {
   ];
   public menuActive: boolean = false;
   public menuToggleState: string = '';
-  public galleryActive: boolean = false;
+  public galleryActive: boolean = true;
   //public image: object = {src: 'assets/gallery/2.jpg'};
   public image;
   public imageIndex: number = 0;
