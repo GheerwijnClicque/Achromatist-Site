@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { PhotoService } from '../photo.service';
 
 @Component({
   selector: 'app-photography',
@@ -28,12 +29,18 @@ export class PhotographyComponent implements OnInit {
   public fullGalleryClass: string = 'active';
   public detailGalleryClass: string = (this.fullGalleryClass === 'active' ? '' : 'active');
 
-  constructor() {
+  photos: any = [];
+  constructor(private photoService: PhotoService) {
     this.image = this.images[0];
 
   }
 
   ngOnInit() {
+    this.photoService.test().subscribe(photos => {
+      this.photos = photos;
+      console.log('photos: ');
+      console.log(photos);
+    });
   }
 
 

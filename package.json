@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start-proxy": "ng serve --proxy-config proxy.conf.json"
+    "start-proxy": "ng serve --proxy-config proxy.conf.json",
+    "pony": "ng build && node server.js"
   },
   "private": true,
   "dependencies": {
@@ -27,6 +28,7 @@
     "core-js": "^2.4.1",
     "express": "^4.16.2",
     "rxjs": "^5.1.0",
+    "sqlite3": "^3.1.13",
     "swiper": "^4.0.1",
     "zone.js": "^0.8.4"
   },
