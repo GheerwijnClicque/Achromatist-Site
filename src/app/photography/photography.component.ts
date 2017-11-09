@@ -1,12 +1,13 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { PhotoService } from '../photo.service';
+import { IPhoto } from './photo.class';
 
 @Component({
   selector: 'app-photography',
   templateUrl: './photography.component.html',
   styleUrls: ['./photography.component.css']
 })
-export class PhotographyComponent implements OnInit {
+export class PhotographyComponent {
   public my_Class = 'checked';
   public images: any = [
       {id: 1, category: '35mm', type: 'b&w', src: 'assets/gallery/1.jpg', thumb: 'assets/gallery/1.jpg'},
@@ -22,24 +23,18 @@ export class PhotographyComponent implements OnInit {
   public menuActive: boolean = false;
   public menuToggleState: string = '';
   public galleryActive: boolean = true;
-  //public image: object = {src: 'assets/gallery/2.jpg'};
+  // public image: object = {src: 'assets/gallery/2.jpg'};
   public image;
   public imageIndex: number = 0;
 
   public fullGalleryClass: string = 'active';
   public detailGalleryClass: string = (this.fullGalleryClass === 'active' ? '' : 'active');
 
-  photos: any = [];
+  photos: IPhoto[] = [];
   constructor(private photoService: PhotoService) {
     this.image = this.images[0];
-
-  }
-
-  ngOnInit() {
-    this.photoService.test().subscribe(photos => {
+    this.photoService.getAllPhotos().subscribe((photos: IPhoto[]) => {
       this.photos = photos;
-      console.log('photos: ');
-      console.log(photos);
     });
   }
 

@@ -1,5 +1,5 @@
 <nav class="topnav" style="display: block;">
- 
+
 
   <div class="menu-info" [hidden]="!galleryActive">
     <!-- <a href="#"><img id="logo" src="../assets/logo.png"/></a> -->
@@ -30,7 +30,7 @@
 </nav>
 
 
- 
+
 
 
 <section class="page">
@@ -124,12 +124,12 @@
             </span>
           </div>
       </div>
-      <div class="overlay-gallery-image inner" [hidden]="!galleryActive"> 
+      <div class="overlay-gallery-image inner" [hidden]="!galleryActive">
             <img [src]="image.src"/>
-            <div class="info">
-                <p><strong>Film:</strong> Kodak Portra 400</p>
-                <p><strong>Camera:</strong> Mamiya RB67</p>
-                <p><strong>Lens:</strong> Mamiya Sekor C 140mm F4.5</p>
+            <div class="info" *ngIf="photos.length > 0">
+                <p><strong>Film:</strong> {{photos[0].film}}</p>
+                <p><strong>Camera:</strong> {{photos[0].camera}}</p>
+                <p><strong>Lens:</strong> {{photos[0].lens}}</p>
             </div>
             <div class="counter">
                 {{imageIndex | json}}/{{images.length - 1}}

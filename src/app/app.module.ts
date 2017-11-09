@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule }  from '@angular/router';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { PhotographyComponent } from './photography/photography.component';
@@ -34,7 +34,7 @@ const ROUTES = [
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     SwiperModule,
     RouterModule.forRoot(ROUTES) // Add routes to the app
   ],

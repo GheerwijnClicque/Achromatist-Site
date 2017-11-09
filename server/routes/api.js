@@ -18,9 +18,9 @@ router.get('/photos', (req, res) => {
   db.serialize(() => {
     db.each(`SELECT * FROM photos`, (err, row) => {
       if (err) {
-        console.error(err.message);
+        res.error(err);
       }
-      res.send(JSON.stringify(row));
+      res.send(JSON.stringify([row]));
     });
   });
 });
