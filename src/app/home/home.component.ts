@@ -1,5 +1,4 @@
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
-import { DOCUMENT } from '@angular/platform-browser';
 
 import { Router, NavigationEnd } from '@angular/router';
 import { SwiperModule } from 'angular2-useful-swiper';
@@ -29,7 +28,7 @@ export class HomeComponent implements OnInit {
   public imageState: string = '';
   public config: SwiperOptions;
 
-  constructor(@Inject(DOCUMENT) private document: Document, router: Router){ }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -49,6 +48,10 @@ export class HomeComponent implements OnInit {
 
   closeNav() {
     this.menuActive = false;
+  }
+
+  public navigate(url: string) {
+    this.router.navigate([url]);
   }
 
 
