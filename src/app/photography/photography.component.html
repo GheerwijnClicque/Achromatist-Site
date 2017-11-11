@@ -40,9 +40,9 @@
     </div>
     <div class="sub-content-item" >
         <div class="grid-container inline-block">
-            <div *ngFor="let image of images; let i = index">
+            <div *ngFor="let image of photos; let i = index">
               <div class="category"  (click)="open(i)">
-                <img class="grid-element" src="{{image.src}}"/>
+                <img class="grid-element" src="assets/gallery/{{image.id}}.jpg"/>
               </div>
          <!--   <a href="#" class="category grid-element">
             </a>
@@ -124,15 +124,15 @@
             </span>
           </div>
       </div>
-      <div class="overlay-gallery-image inner" [hidden]="!galleryActive">
-            <img [src]="image.src"/>
+      <div class="overlay-gallery-image inner" [hidden]="!galleryActive" *ngIf="image">
+            <img src="assets/gallery/{{image.id}}.jpg"/>
             <div class="info" *ngIf="photos.length > 0">
-                <p><strong>Film:</strong> {{photos[0].film}}</p>
-                <p><strong>Camera:</strong> {{photos[0].camera}}</p>
-                <p><strong>Lens:</strong> {{photos[0].lens}}</p>
+                <p><strong>Film:</strong> {{image.film}}</p>
+                <p><strong>Camera:</strong> {{image.camera}}</p>
+                <p><strong>Lens:</strong> {{image.lens}}</p>
             </div>
             <div class="counter">
-                {{imageIndex | json}}/{{images.length - 1}}
+                {{imageIndex | json}}/{{photos.length - 1}}
             </div>
         </div>
     </div>

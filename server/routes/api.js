@@ -16,11 +16,17 @@ router.get('/', (req, res) => {
 
 router.get('/photos', (req, res) => {
   db.serialize(() => {
+    let rows = [];
     db.each(`SELECT * FROM photos`, (err, row) => {
       if (err) {
         res.error(err);
       }
-      res.send(JSON.stringify([row]));
+      rows.push(row);
+    }, (err, count) => {
+      if (err) {
+        res.error(err);
+      }
+      res.send(JSON.stringify(rows));
     });
   });
 });

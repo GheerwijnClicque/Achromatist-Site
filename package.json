@@ -10,7 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start-proxy": "ng serve --proxy-config proxy.conf.json",
-    "pony": "ng build && node server.js"
+    "pony": "ng build && node server.js",
+    "coolere-pony": "node ./server/provisioning/create-db"
   },
   "private": true,
   "dependencies": {
